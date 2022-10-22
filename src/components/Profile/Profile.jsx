@@ -1,4 +1,14 @@
 import user from "./data/user.json";
+import PropTypes from "prop-types";
+
+/** Опис компонента <Profile>
+Компонент повинен приймати кілька пропсів з інформацією про користувача:
+username — ім'я користувача
+tag — тег в соціальній мережі без @
+location — місто і країна
+avatar — посилання на зображення
+stats — об'єкт з інформацією про активності
+*/
 
 export const UserProfile = ({ username, 
     tag, 
@@ -30,14 +40,15 @@ export const UserProfile = ({ username,
     </div>
 }
 
-/** Опис компонента <Profile>
-Компонент повинен приймати кілька пропсів з інформацією про користувача:
-username — ім'я користувача
-tag — тег в соціальній мережі без @
-location — місто і країна
-avatar — посилання на зображення
-stats — об'єкт з інформацією про активності
 
-ОПИСАТИ PROPTYPES!!!!!!!!!!!!!!!!!!!!!!!
+// ОПИС PROPTYPES!!!!!!!!!
+UserProfile.PropTypes = {
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string,
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+}
 
-*/
