@@ -1,14 +1,6 @@
-import user from "./data/user.json";
+// import user from "data/user";
+import css from "components/Profile/Profile.module.css";
 import PropTypes from "prop-types";
-
-/** Опис компонента <Profile>
-Компонент повинен приймати кілька пропсів з інформацією про користувача:
-username — ім'я користувача
-tag — тег в соціальній мережі без @
-location — місто і країна
-avatar — посилання на зображення
-stats — об'єкт з інформацією про активності
-*/
 
 export const UserProfile = ({ username, 
     tag, 
@@ -16,25 +8,25 @@ export const UserProfile = ({ username,
     avatar, 
     stats: { followers, views, likes } }) => {
 
-    <div>
-        <div>
-            <img src={avatar} alt="{username} avatar" />
-            <p>{username}</p>
-            <p>{tag}</p>
-            <p>{location}</p>
+    <div className={css.profile}>
+        <div className={css.description}>
+            <img className={css.avatar} src={avatar} alt="{username} avatar" />
+            <p className={css.name}>{username}</p>
+            <p className={css.tag}>{tag}</p>
+            <p className={css.location}>{location}</p>
         </div>
-        <ul>
+        <ul className={css.stats}>
             <li>
-                <span>Followers</span>
-                <span>{followers}</span>
+                <span className={css.label}>Followers</span>
+                <span className={css.quantity}>{followers}</span>
             </li>
             <li>
-                <span>Views</span>
-                <span>{views}</span>
+                <span className={css.label}>Views</span>
+                <span className={css.quantity}>{views}</span>
             </li>
             <li>
-                <span>Likes</span>
-                <span>{likes}</span>
+                <span className={css.label}>Likes</span>
+                <span className={css.quantity}>{likes}</span>
             </li>
         </ul>
     </div>

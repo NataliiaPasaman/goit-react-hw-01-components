@@ -1,4 +1,5 @@
-// import { UserProfile } from "./Profile/Profile";
+import { UserProfile } from "components/Profile/Profile";
+import userInformation from "../data/user.json";
 
 export const App = () => {
   return (
@@ -12,6 +13,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
+      <UserProfile user={userInformation} />
     </div>
   );
 };
