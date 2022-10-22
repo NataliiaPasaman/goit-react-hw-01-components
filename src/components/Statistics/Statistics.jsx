@@ -9,23 +9,17 @@ title – не обов'язковий, і якщо він не передани
 stats – масив об'єктів, що містять інформацію про елемент статистики. Може мати довільну кількість елементів.
 Колір фону елемента статистики в оформленні можна пропустити або створити функцію для генерації випадкового кольору.
 Компонент повинен створювати DOM елемент наступної структури.
-
-Приклад використання
-import data from '/path/to/data.json';
-
-<Statistics title="Upload stats" stats={data} />
-<Statistics stats={data} />
  */
 
 export const Statistics = (title, stats) => {
   <section className={css.statistics}>
     {title} ? <h2 className={css.title}>{title}</h2> : null
-    <ul className={css.stat-list}>
+    return <ul className={css.stat-list}>
       {stats.map(stat => {
-        return `<li className={css.item}>
-        <span className={css.label}>${stat.label}</span>
-        <span className={css.percentage}>${stat.percentage}</span>
-        </li>`
+        <li className={css.item} key={stat.id}>
+        <span className={css.label}>{stat.label}</span>
+        <span className={css.percentage}>{stat.percentage}</span>
+        </li>
       }
       )}
     </ul>
@@ -37,5 +31,9 @@ export const Statistics = (title, stats) => {
 */
 Statistics.PropsTypes = {
   title: PropsTypes.string,
-  stats: PropsTypes.array,
+  stats: PropsTypes.arrayOf(PropsTypes.exact({
+    id: PropsTypes.string.isRequired,
+    label: PropsTypes.string.isRequired,
+    percentage: PropsTypes.number.isRequired,
+  })),
 }
