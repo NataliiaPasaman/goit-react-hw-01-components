@@ -1,61 +1,38 @@
-import css from "components/TransactionHistory/TransactionHistory.module.css";
-import PropsTypes from "prop-types";
-
-/** Необхідно створити компонент історії транзакцій в особистому кабінеті інтернет-банку.
-У прикладі наведена розмітка двох транзакцій.
-
-<table class="transaction-history">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>Invoice</td>
-      <td>125</td>
-      <td>USD</td>
-    </tr>
-    <tr>
-      <td>Withdrawal</td>
-      <td>85</td>
-      <td>USD</td>
-    </tr>
-  </tbody>
-</table>
- */
+import css from 'components/TransactionHistory/TransactionHistory.module.css';
+import PropsTypes from 'prop-types';
 
 export const TransactionHistory = ({ items }) => {
+  return (
     <table className={css.transaction_history}>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
-    </tr>
-  </thead>
-  {items.map(item => {
-        return (
-            <tbody key={item.id}>
+      <thead>
         <tr>
-          <td>{item.type}</td>
-          <td>{item.amount}</td>
-          <td>{item.currency}</td>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
         </tr>
-      </tbody>
-        )
-  }
-    )}
-</table>
-}
+      </thead>
+      {items.map(({ id, type, amount, currency }) => {
+        return (
+          <tbody key={id}>
+            <tr>
+              <td>{type}</td>
+              <td>{amount}</td>
+              <td>{currency}</td>
+            </tr>
+          </tbody>
+        );
+      })}
+    </table>
+  );
+};
 
+// ОПИС PROPTYPES!!!!!!!!!
 TransactionHistory.propsTypes = {
-    items: PropsTypes.arrayOf(PropsTypes.exact({
+  items: PropsTypes.arrayOf(
+    PropsTypes.exact({
       type: PropsTypes.string.isRequired,
       amount: PropsTypes.string.isRequired,
       currency: PropsTypes.string.isRequired,
-    })),
-  }
+    })
+  ),
+};

@@ -1,5 +1,5 @@
-import css from "components/FriendListItem/FriendListItem.module.css";
-import PropsTypes from "prop-types";
+import css from 'components/FriendListItem/FriendListItem.module.css';
+import PropsTypes from 'prop-types';
 /**
  * Опис компонента <FriendListItem>
 Компонент повинен приймати кілька пропів:
@@ -11,17 +11,18 @@ isOnline - буль, що сигналізує про стан друга: в м
  */
 
 export const FriendListItem = ({ avatar, name, isOnline }) => {
+  return (
     <li className={css.item}>
-        <span className={css.status}>{isOnline}</span>
-        <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
-        <p className={css.name}>{name}</p>
-</li>
-}
+      <span className={css.status}>{isOnline}</span>
+      <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
+      <p className={css.name}>{name}</p>
+    </li>
+  );
+};
 
 // ОПИС PROPTYPES!!!!!!!!!
 FriendListItem.propTypes = {
-    avatar: PropsTypes.string.isRequired,
-    name: PropsTypes.string.isRequired,
-    isOnline: PropsTypes.bool.isRequired,
-}
-
+  avatar: PropsTypes.string.isRequired,
+  name: PropsTypes.string.isRequired,
+  isOnline: PropsTypes.bool.isRequired,
+};
