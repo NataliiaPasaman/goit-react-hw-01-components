@@ -1,4 +1,3 @@
-// import user from "data/user";
 import css from "components/Profile/Profile.module.css";
 import PropTypes from "prop-types";
 
@@ -8,7 +7,6 @@ export const UserProfile = ({
     location, 
     avatar, 
     stats }) => {
-
     <div className={css.profile}>
         <div className={css.description}>
             <img className={css.avatar} src={avatar} alt="{username} avatar" />

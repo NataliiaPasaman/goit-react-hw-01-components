@@ -1,7 +1,7 @@
 import css from "components/FriendList/FriendList.module.css";
 import PropsTypes from "prop-types";
 import { FriendListItem } from "components/FriendListItem/FriendListItem";
-import friends from "data/friends.json"
+// import friends from "data/friends.json"
 
 /**Необхідно створити компонент <FriendList>, за допомогою якого ми могли б 
  * відображати інформацію про друзів користувача 
@@ -12,7 +12,7 @@ export const FriendList = ({ friends }) => {
   <ul className={css.friend_list}>
     {friends.map(friend => {
       return (
-        <FriendListItem
+        <FriendListItem key={friend.id}
           avatar={friend.avatar}
           name={friend.name}
           isOnline={friend.isOnline}
@@ -22,11 +22,14 @@ export const FriendList = ({ friends }) => {
   </ul>;
 };
 
-FriendList.propsTypes = {
-    friends: PropsTypes.array,
-}
+// FriendList.propsTypes = {
+//     friends: PropsTypes.array,
+// }
 
-/**     <FriendListItem 
-    avatar={friends.avatar}
-    name={friends.name}
-    isOnline={friends.isOnline} />*/
+FriendList.propsTypes = {
+    friends: PropsTypes.arrayOf(PropsTypes.exact({
+      avatar: PropsTypes.string.isRequired,
+      name: PropsTypes.number.isRequired,
+      isOnline: PropsTypes.bool.isRequired,
+    })),
+  }

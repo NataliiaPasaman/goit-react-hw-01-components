@@ -10,8 +10,8 @@ isOnline - буль, що сигналізує про стан друга: в м
 Це можна зробити за допомогою різних CSS-класів або Styled Components.
  */
 
-export const FriendListItem = ({ avatar, name, isOnline, id }) => {
-    <li className={css.item} key={id}>
+export const FriendListItem = ({ avatar, name, isOnline }) => {
+    <li className={css.item}>
         <span className={css.status}>{isOnline}</span>
         <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
         <p className={css.name}>{name}</p>
