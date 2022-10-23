@@ -2,11 +2,12 @@
 import css from "components/Profile/Profile.module.css";
 import PropTypes from "prop-types";
 
-export const UserProfile = ({ username, 
+export const UserProfile = ({ 
+    username, 
     tag, 
     location, 
     avatar, 
-    stats: { followers, views, likes } }) => {
+    stats }) => {
 
     <div className={css.profile}>
         <div className={css.description}>
@@ -18,29 +19,26 @@ export const UserProfile = ({ username,
         <ul className={css.stats}>
             <li>
                 <span className={css.label}>Followers</span>
-                <span className={css.quantity}>{followers}</span>
+                <span className={css.quantity}>{stats.followers}</span>
             </li>
             <li>
                 <span className={css.label}>Views</span>
-                <span className={css.quantity}>{views}</span>
+                <span className={css.quantity}>{stats.views}</span>
             </li>
             <li>
                 <span className={css.label}>Likes</span>
-                <span className={css.quantity}>{likes}</span>
+                <span className={css.quantity}>{stats.likes}</span>
             </li>
         </ul>
     </div>
 }
 
-
 // ОПИС PROPTYPES!!!!!!!!!
-UserProfile.PropTypes = {
+UserProfile.propTypes = {
     username: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     avatar: PropTypes.string,
-    followers: PropTypes.number.isRequired,
-    views: PropTypes.number.isRequired,
-    likes: PropTypes.number.isRequired,
+    stats: PropTypes.object,
 }
 
