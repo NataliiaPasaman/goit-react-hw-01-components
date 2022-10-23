@@ -1,3 +1,58 @@
 .profile {
-    color: fuchsia;
+    /* font-family: 'Roboto';
+    font-size: 24px; */
+
+    width: 450px;
+    margin: 0 auto;
+    border: 5px;
+    color: black;
+    background-color: white;
+    text-align: center;
 }
+
+.description {
+    padding: 30px 20px;
+}
+
+.avatar {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.name {
+    margin-top: 20px;
+    font-family: 'Roboto';
+    font-size: 24px;
+}
+
+.tag {
+    margin-top: 10px;
+    font-family: 'Roboto';
+    font-size: 24px;
+}
+
+.location {
+    margin-top: 10px;
+    font-family: 'Roboto';
+    font-size: 24px;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    /* margin-top: 40px; */
+    padding: 20px;
+    font-size: 18px;
+    background-color: aliceblue;
+}
+
+li:not(:last-child) {
+    margin-right: 20px;
+}
+
+span {
+    display: block;
+}
+
