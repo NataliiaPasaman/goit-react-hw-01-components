@@ -52,6 +52,7 @@
     background-color: aliceblue;
 
     border-top: 1px solid rgb(163, 159, 155);
+    border-bottom: 1px solid rgb(163, 159, 155);
 }
 
 .stats_item:first-child:after {
