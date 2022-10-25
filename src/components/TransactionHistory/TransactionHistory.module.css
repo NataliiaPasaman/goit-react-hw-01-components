@@ -1,0 +1,29 @@
+.transaction_history {
+    font-family: 'Roboto'; 
+    font-size: 18px;
+    width: 450px;
+    margin: 0 auto;
+
+    color: darkgrey;
+    background-color: white;
+    text-align: center;
+}
+
+thead {
+    height: 40px;
+    padding: 20px 15px;
+    background-color: cornflowerblue;
+    color: rgb(255 255 255);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+tbody {
+    padding: 5px;
+    height: 35px;
+    font-size: 16px;
+}
+
+tbody:nth-child(2n + 1) {
+    background-color: lightgray;
+}
