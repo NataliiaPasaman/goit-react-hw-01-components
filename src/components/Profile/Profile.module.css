@@ -1,58 +1,89 @@
 .profile {
-    /* font-family: 'Roboto';
-    font-size: 24px; */
-
+    font-family: 'Roboto'; 
     width: 450px;
     margin: 0 auto;
     border: 5px;
     color: black;
     background-color: white;
     text-align: center;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 
+    0px 1px 1px rgb(0 0 0 / 14%), 
+    0px 2px 1px rgb(0 0 0 / 20%);
 }
 
 .description {
-    padding: 30px 20px;
+    padding: 50px 35px;
 }
 
 .avatar {
     width: 250px;
     margin: 0 auto;
+    border-radius: 50%;
 }
 
 .name {
     margin-top: 20px;
-    font-family: 'Roboto';
-    font-size: 24px;
+    font-family: 'Cantarell';
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .tag {
-    margin-top: 10px;
-    font-family: 'Roboto';
+    margin-top: 20px;
     font-size: 24px;
+    color: darkgrey;
 }
 
 .location {
     margin-top: 10px;
-    font-family: 'Roboto';
     font-size: 24px;
+    color: darkgrey;
 }
 
 .stats {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    column-gap: 20px;
 
-    /* margin-top: 40px; */
     padding: 20px;
     font-size: 18px;
     background-color: aliceblue;
+
+    border-top: 1px solid rgb(163, 159, 155);
 }
 
-li:not(:last-child) {
-    margin-right: 20px;
-}
-
-span {
+.stats_item:first-child:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 170px;
     display: block;
+    width: 1px;
+    height: 100px;
+    background-color: rgb(163, 159, 155);
 }
 
+.stats_item:last-child:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 140px;
+    display: block;
+    width: 1px;
+    height: 100px;
+    background-color: rgb(163, 159, 155);
+}
+
+.label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 20px;
+    color: rgb(163, 159, 155);
+}
+
+.quantity {
+    font-size: 28px;
+    font-weight: bold;
+}
